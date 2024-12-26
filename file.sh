@@ -1,6 +1,6 @@
 # Define variables
 TARGET_DIR="/home/ubuntu/GOCD"
-WORKSPACE="/var/lib/go-agent/pipelines/JarDeploymentPipeline"
+WORKSPACE="/var/lib/go-agent/pipelines/IDFC-Pipeline"
  
 # Ensure the deploy.sh script is executable
 if [ ! -x "${WORKSPACE}/deploy.sh" ]; then
