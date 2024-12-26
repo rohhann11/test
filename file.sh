@@ -2,10 +2,10 @@
 TARGET_DIR="/home/ubuntu/GOCD"
 WORKSPACE="/var/lib/go-agent/pipelines/IDFC-Pipeline"
  
-# Ensure the deploy.sh script is executable
-if [ ! -x "${WORKSPACE}/deploy.sh" ]; then
-  echo "Making deploy.sh executable..."
-  chmod +x "${WORKSPACE}/deploy.sh"
+# Ensure the file.sh script is executable
+if [ ! -x "${WORKSPACE}/file.sh" ]; then
+  echo "Making file.sh executable..."
+  chmod +x "${WORKSPACE}/file.sh"
 fi
  
 # Create the target directory if it doesn't exist
@@ -25,4 +25,4 @@ echo "Setting permissions on ${TARGET_DIR}/HelloWorld.jar"
 chmod 755 "${TARGET_DIR}/HelloWorld.jar"
  
 # Output success message
-echo "JAR file has been deployed to ${TARGET_DIR}"
+echo "JAR file has been file.sh to ${TARGET_DIR}"
