@@ -4,7 +4,7 @@
 file_path="/home/ubuntu/jenkins.txt"
 
 # Create the file (it will be empty if it doesn't already exist)
-touch "$file_path"
+sudo touch "$file_path"
 
 # Optionally, add some content to the file (if desired)
 echo "This is the Jenkins file." > "$file_path"
