@@ -1,28 +1,16 @@
-# Define variables
-TARGET_DIR="/home/ubuntu/GOCD"
-WORKSPACE="/var/lib/go-agent/pipelines/IDFC-Pipeline"
+#!/bin/bash
  
-# Ensure the file.sh script is executable
-if [ ! -x "${WORKSPACE}/file.sh" ]; then
-  echo "Making file.sh executable..."
-  chmod +x "${WORKSPACE}/file.sh"
-fi
+# Define the file path
  
-# Create the target directory if it doesn't exist
-echo "Creating directory: ${TARGET_DIR}"
-mkdir -p "${TARGET_DIR}"
+file_path="/home/ubuntu/GOCD/jenkins.txt"
  
-# Update ownership of the target directory
-echo "Setting ownership of ${TARGET_DIR} to user 'go'"
-sudo chown -R go:go "${TARGET_DIR}"
+# Create the file (it will be empty if it doesn't already exist)
+sudo touch "$file_path"
+sudo mkdir -p /home/ubuntu/GOCD
+sudo touch "$file_path"
  
-# Copy the JAR file to the target directory
-echo "Copying HelloWorld.jar to ${TARGET_DIR}"
-cp "${WORKSPACE}/HelloWorld.jar" "${TARGET_DIR}/"
+# Optionally, add some content to the file (if desired)
+echo "This is the Jenkins file." > "$file_path"
  
-# Set permissions on the JAR file
-echo "Setting permissions on ${TARGET_DIR}/HelloWorld.jar"
-chmod 755 "${TARGET_DIR}/HelloWorld.jar"
- 
-# Output success message
-echo "JAR file has been file.sh to ${TARGET_DIR}"
+# Print a message indicating that the file has been created
+echo "File jenkins.txt has been created at $file_path"
