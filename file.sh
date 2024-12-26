@@ -1,19 +1,13 @@
 #!/bin/bash
 
-# Prompt the user for the file name
-echo "Enter the file name to create:"
-read filename
+# Define the file path
+file_path="/home/ubuntu/jenkins.txt"
 
-# Prompt the user for the content to add to the file
-echo "Enter the content you want to add to the file:"
-read content
+# Create the file (it will be empty if it doesn't already exist)
+touch "$file_path"
 
-# Create the file and add the content
-echo "$content" > "$filename"
+# Optionally, add some content to the file (if desired)
+echo "This is the Jenkins file." > "$file_path"
 
-# Confirm that the file has been created
-if [ -f "$filename" ]; then
-    echo "File '$filename' created successfully with the content."
-else
-    echo "Failed to create the file."
-fi
+# Print a message indicating that the file has been created
+echo "File jenkins.txt has been created at $file_path"
