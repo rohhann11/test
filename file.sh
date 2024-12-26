@@ -1,9 +1,12 @@
 #!/bin/bash
 
 # Define the file path
-file_path="/home/ubuntu/jenkins.txt"
+
+file_path="/home/ubuntu/GOCD/jenkins.txt"
 
 # Create the file (it will be empty if it doesn't already exist)
+sudo touch "$file_path"
+sudo mkdir -p /home/ubuntu/GOCD
 sudo touch "$file_path"
 
 # Optionally, add some content to the file (if desired)
